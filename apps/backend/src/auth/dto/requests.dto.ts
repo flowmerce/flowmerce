@@ -2,7 +2,7 @@ import { IsEmail, IsString, IsNotEmpty, Length } from 'class-validator';
 import { Transform } from 'class-transformer';
 import { ApiProperty } from '@nestjs/swagger';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
-import { IsPhoneByCountry } from 'src/common/decorators/validation/phoneNumber';
+import { IsPhoneByCountry } from '../../common/decorators/validation/phoneNumber';
 
 export class RegisterDto {
     @ApiProperty({ required: true, example: 'John Doe' })
