@@ -12,10 +12,7 @@ async function bootstrap() {
     const app = await NestFactory.create(AppModule);
 
     app.useGlobalFilters(app.get(ExceptionFilter));
-    app.useGlobalPipes(new ValidationPipe({
-        transform: true,
-        whitelist: true,
-    }));
+    app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
 
     app.setGlobalPrefix(PREFIX);
     app.enableVersioning({
@@ -29,7 +26,7 @@ async function bootstrap() {
         .build();
 
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup(BASE_PATH, app, document);
+    SwaggerModule.setup(`${BASE_PATH}/docs`, app, document);
 
     await app.listen(process.env.PORT || 5000);
 }

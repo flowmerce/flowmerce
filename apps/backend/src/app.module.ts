@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { I18nModule, AcceptLanguageResolver } from 'nestjs-i18n';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import * as path from 'path';
+import { join } from 'path';
 import { ExceptionFilter } from './common/filters/exception.filter';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
@@ -17,10 +17,10 @@ import { UsersModule } from './users/users.module';
         I18nModule.forRoot({
             fallbackLanguage: 'en',
             loaderOptions: {
-                path: path.join(__dirname, '/i18n/'),
+                path: join(__dirname, '/i18n/'),
                 watch: true,
             },
-            typesOutputPath: path.join(__dirname, './src/generated/i18n.generated.ts'),
+            typesOutputPath: join(__dirname, './src/generated/i18n.generated.ts'),
             resolvers: [AcceptLanguageResolver],
         }),
 
