@@ -26,7 +26,19 @@ async function bootstrap() {
         .build();
 
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup(`${BASE_PATH}/docs`, app, document);
+    SwaggerModule.setup(
+        `${BASE_PATH}/docs`,
+        app,
+        document,
+        {
+            customSiteTitle: 'Flowmerce API docs',
+            customCssUrl: '/public/css/swagger-ui.css',
+            customJs: [
+                '/public/js/swagger-ui-bundle.js',
+                '/public/js/swagger-ui-standalone-preset.js',
+            ],
+        },
+    );
 
     await app.listen(process.env.PORT || 5000);
 }
