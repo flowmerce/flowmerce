@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { I18nModule, AcceptLanguageResolver } from 'nestjs-i18n';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { ExceptionFilter } from './common/filters/exception.filter';
 import { AuthModule } from './auth/auth.module';
@@ -23,11 +22,6 @@ import { UsersModule } from './users/users.module';
             },
             typesOutputPath: join(__dirname, './src/generated/i18n.generated.ts'),
             resolvers: [AcceptLanguageResolver],
-        }),
-
-        ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '..', 'public'),
-            serveRoot: '/public',
         }),
 
         TypeOrmModule.forRootAsync({

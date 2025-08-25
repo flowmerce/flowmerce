@@ -32,11 +32,6 @@ async function bootstrap() {
         document,
         {
             customSiteTitle: 'Flowmerce API docs',
-            customCssUrl: '/public/css/swagger-ui.css',
-            customJs: [
-                '/public/js/swagger-ui-bundle.js',
-                '/public/js/swagger-ui-standalone-preset.js',
-            ],
         },
     );
 
