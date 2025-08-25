@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-primary: #2274ca;
+  --color-primary-light: #63B3FF;
+  --color-secondary: #0A2540;
+  --color-bg: #FFFFFF;
+  --color-text: #0A0A0A;
+  --color-muted: #8F8F8FFF;
+  --color-border: theme(colors.slate-500);
+  --spacing-header: 68px;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-primary: #2274ca;
+    --color-primary-light: #81C5FF;
+    --color-secondary: #DDE6F2;
+    --color-bg: #000B17;
+    --color-text: #F5F5F5;
+    --color-border: #102D44;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-bg text-text;
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.absolute-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.bg-gradient-primary-radial {
+  background: radial-gradient(100% 100% at 50% 50%, var(--color-primary) 0%, rgba(34, 116, 202, 0.3) 50%, rgba(34, 116, 202, 0) 100%);
+}
+
+.bg-gradient-primary-linear {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 25%, #ffcd00 50%, var(--color-primary-light) 75%, var(--color-primary) 100%);
+}
+
+.bg-gradient-primary-radial-soft {
+  background: radial-gradient(80% 80% at 50% 50%, var(--color-primary) 0%, rgba(34, 116, 202, 0.4) 40%, rgba(34, 116, 202, 0) 80%);
+}
+
+.bg-gradient-primary-linear-diagonal {
+  background: linear-gradient(45deg, var(--color-primary) 0%, var(--color-primary-light) 30%, #ffcd00 60%, var(--color-primary-light) 80%, var(--color-primary) 100%);
+}
+

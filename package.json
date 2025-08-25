@@ -1,0 +1,30 @@
+{
+    "name": "flowmerce",
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "npm install && turbo run dev",
+        "lint": "eslint \"**/*.{js,ts,tsx}\"",
+        "lint:fix": "eslint \"**/*.{js,ts,tsx}\" --fix",
+        "format": "prettier --write \"**/*.{js,ts,tsx,md,json}\"",
+        "format:check": "prettier --check \"**/*.{js,ts,tsx,md,json}\"",
+        "frontend:dev": "turbo run dev --filter=frontend",
+        "backend:dev": "turbo run dev --filter=backend",
+        "frontend:build": "turbo run build --filter=frontend",
+        "backend:build": "turbo run build --filter=backend"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "prettier": "^3.6.2",
+        "turbo": "^2.5.5",
+        "@typescript-eslint/parser": "^7.0.0",
+        "@typescript-eslint/eslint-plugin": "^7.0.0"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "npm@10.8.2",
+    "workspaces": [
+        "apps/*"
+    ]
+}
