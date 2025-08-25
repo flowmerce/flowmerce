@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe, VersioningType } from '@nestjs/common';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ExceptionFilter } from './common/filters/exception.filter';
+import { setupSwagger } from './common/swagger';
 
 const API_VERSION = '1';
 const PREFIX = 'api';
@@ -20,29 +20,7 @@ async function bootstrap() {
         defaultVersion: API_VERSION,
     });
 
-    const config = new DocumentBuilder()
-        .setTitle('Flowmerce API')
-        .setVersion(Number(API_VERSION).toFixed(1))
-        .build();
-
-    const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup(
-        `${BASE_PATH}/docs`,
-        app,
-        document,
-        {
-            customSiteTitle: 'Flowmerce API docs',
-            customJs: [
-                'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.js',
-            ],
-            customCssUrl: [
-                'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css',
-                'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.min.css',
-                'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.css',
-            ],
-        },
-    );
+    setupSwagger(app, `${BASE_PATH}/docs`, Number(API_VERSION).toFixed(1));
 
     await app.listen(process.env.PORT || 5000);
 }
