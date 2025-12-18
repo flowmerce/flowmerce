@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { Inter } from 'next/font/google';
 import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 import { cn } from 'src/utils/tailwind';
 import type { PageProps } from 'src/types/route';
 import './globals.css';
@@ -27,6 +28,7 @@ const LocaleLayout: FC<PropsWithChildren & PageProps> = async ({
                 <NextIntlClientProvider>
                     <Header />
                     <main className="pt-header">{children}</main>
+                    <Footer />
                 </NextIntlClientProvider>
             </body>
         </html>
