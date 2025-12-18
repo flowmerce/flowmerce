@@ -137,6 +137,7 @@ const Footer = () => {
                 </div>
 
                 {/* Divider */}
+                
                 <div className="border-t border-[var(--color-border)] my-8"></div>
 
                 {/* Bottom section with policies */}
