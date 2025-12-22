@@ -23,7 +23,7 @@ const Footer = () => {
                             <Logo className="h-8 text-[var(--color-text)]" />
                         </Link>
                         <p className="text-[var(--color-muted)] text-sm max-w-xs">
-                            Your product or company description. Create, manage, and scale your business with our solutions.
+                            Create, manage, and scale your business with our solutions.
                         </p>
                         <div className="flex space-x-4">
                             <a href="#" aria-label="Facebook" className="text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors">
@@ -137,7 +137,7 @@ const Footer = () => {
                 </div>
 
                 {/* Divider */}
-                
+
                 <div className="border-t border-[var(--color-border)] my-8"></div>
 
                 {/* Bottom section with policies */}
