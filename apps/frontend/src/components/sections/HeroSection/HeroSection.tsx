@@ -8,7 +8,7 @@ const HeroSection = () => {
     const t = useTranslations('hero');
 
     return (
-        <div className="container mx-auto h-screen">
+        <div className="container mx-auto min-h-screen">
             <motion.div
                 className="text-center text-white pt-20"
                 initial={{ opacity: 0, y: -300 }}
@@ -23,7 +23,7 @@ const HeroSection = () => {
                 </p>
             </motion.div>
 
-            <div className="relative flex items-center justify-between m-20">
+            <div className="relative grid grid-cols-1 justify-items-center p-10 md:justify-items-normal md:grid-cols-[max-content_1fr] md:p-20">
                 <ProductCards />
                 <Services />
             </div>
