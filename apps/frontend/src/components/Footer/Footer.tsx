@@ -17,7 +17,7 @@ const Footer = () => {
         <footer className="w-full bg-[var(--color-bg)] border-t border-[var(--color-border)]">
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                    {/* Logo and description */}
+                    
                     <div className="space-y-4">
                         <Link href={HOME} className="inline-block">
                             <Logo className="h-8 text-[var(--color-text)]" />
@@ -41,7 +41,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Navigation */}
+                  
                     <div>
                         <h3 className="font-semibold text-[var(--color-text)] mb-4">Navigation</h3>
                         <ul className="space-y-2">
@@ -80,7 +80,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Support */}
+                   
                     <div>
                         <h3 className="font-semibold text-[var(--color-text)] mb-4">Support</h3>
                         <ul className="space-y-2">
@@ -119,7 +119,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                  
                     <div>
                         <h3 className="font-semibold text-[var(--color-text)] mb-4">Contact Us</h3>
                         <ul className="space-y-2">
@@ -136,11 +136,11 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Divider */}
+    
 
                 <div className="border-t border-[var(--color-border)] my-8"></div>
 
-                {/* Bottom section with policies */}
+         
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="text-[var(--color-muted)] text-sm mb-4 md:mb-0">
                         © {currentYear} Your Company. All rights reserved.

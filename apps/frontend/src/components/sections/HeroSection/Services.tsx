@@ -18,7 +18,7 @@ import pinterestImageSrc from 'public/images/pinterest.svg?url';
 import instagramImageSrc from 'public/images/instagram.png';
 
 const SERVICES = [
-    { name: 'Rozetka', logo: rozetkaImageSrc, className: '-mt-18' },
+    { name: 'Rozetka', logo: rozetkaImageSrc, className: 'mt-20 md:-mt-18' },
     { name: 'Instagram', logo: instagramImageSrc, className: 'mr-[25vw] h-14' },
     { name: 'Epicenter', logo: epicenterImageSrc, className: 'mr-[12vw]' },
     { name: 'Prom Ua', logo: promImageSrc, className: 'mr-[2vw]' },
@@ -150,7 +150,7 @@ const Service: FC<ServiceLogoProps> = ({
 
 const Services = () => {
     return (
-        <div className="flex flex-col grow gap-5">
+        <div className="flex justify-center flex-col grow gap-5">
             {SERVICES.map((service, index) => (
                 <Service
                     index={index}
