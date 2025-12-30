@@ -56,9 +56,9 @@ const DESKTOP_STRAIGHT_PATH = 'M0 51 H1200';
 
 // mobile paths
 const MOBILE_PATHS = [
-  'M100 0 V220',
-  'M200 0 V160 H80',
-  'M160 0 V200 H120',
+  'M200 0 V220',
+  'M570 0 V700 H0',
+  'M590 0 V950 H100',
   'M160 0 V240 H160',
   'M160 0 V280 H200',
   'M160 0 V320 H240',
@@ -140,10 +140,10 @@ const Service: FC<ServiceProps> = ({
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox={isMobile ? '0 0 300 350' : '0 0 1200 102'}
+        viewBox={isMobile ? '0 0 500 2000' : '0 0 1200 102'}
         className={cn(
           isMobile
-            ? 'absolute left-1/2 -translate-x-1/2 top-0'
+            ? 'absolute left-1/2 -translate-x-3/4 top-0'
             : !isCenterDesktopLine(index) && index === 0
             ? 'scale-y-[-1]'
             : ''
